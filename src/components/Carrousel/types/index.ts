@@ -7,6 +7,7 @@ export interface CarouselState {
     tabSelect: number;
     transitionMake: number;
     isTransition: boolean;
+    isLastNumberStyle: boolean;
     
 }
 export interface CarouselProps {
@@ -17,4 +18,5 @@ export interface CarouselProps {
     tabsShow: number;
     tabsLimitShow: number;
     tabSelect: number;
+    isLastNumberStyle: boolean;
 }

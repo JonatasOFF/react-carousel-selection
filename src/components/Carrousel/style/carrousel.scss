@@ -8,7 +8,7 @@
     line-height: $line;
 }
 
-$transition-scale-delay: 0.4s;
+$transition-scale-delay: 0.3s;
 $transition-translate-delay: 0.7s;
 
 .carousel-main {
@@ -16,34 +16,33 @@ $transition-translate-delay: 0.7s;
     margin-right: auto;
     margin-left: auto;
     > .pre-body {
-        .left {
+        .arrow-left {
             @extend .arrow;
             margin-left: -45px;
-            z-index: 9999;
+            z-index: 2;
             border-right: 15px solid white;
         }
 
-        .right {
+        .arrow-right {
             @extend .arrow;
-            z-index: 9999;
+            z-index: 2;
             margin-left: 220px;
             border-left: 15px solid white;
         }
 
         > .body-number {
             position: relative;
-            z-index: 5;
+            z-index: 1;
             &.select {
                 transform: scale(1.2);
-                background-color: aqua;
+
                 transition: transform $transition-scale-delay ease, -webkit-transform $transition-scale-delay ease,
                     -moz-transform $transition-scale-delay ease, background-color $transition-scale-delay ease;
-                
             }
 
             &.unpicked {
                 transform: scale(1);
-                z-index: -1;
+                z-index: 0;
                 transition: transform $transition-scale-delay ease, -webkit-transform $transition-scale-delay ease,
                     -moz-transform $transition-scale-delay ease;
             }
@@ -53,16 +52,8 @@ $transition-translate-delay: 0.7s;
                     width: 190px;
                     height: 170px;
                     opacity: 1;
-
-                    &.par {
-                        background-color: black;
-                    }
-
-                    &.trans {
-                        
-                        transition: transform 0.8s ease, -webkit-transform 0.8s ease, -moz-transform 0.8s ease;
-                    }
-
+                    border-radius: 2px;
+                    box-shadow: 8px 4px 8px rgba(44, 44, 44, 0.161);
                     position: relative;
                     background-color: blue;
                     color: white;
@@ -70,7 +61,36 @@ $transition-translate-delay: 0.7s;
                     display: grid;
                     align-items: center;
                     justify-content: center;
-                    z-index: -1;
+                    z-index: 0;
+                    
+                    &.par {
+                        background-color: black;
+                    }
+
+                    &.trans {
+                        transition: transform 0.8s ease, -webkit-transform 0.8s ease, -moz-transform 0.8s ease;
+                    }
+
+                    &.last-numbers {
+                        opacity: 0.7;
+                        scale: 0.9;
+                        &.left {
+                            margin-right: -15px;
+                        }
+                        &.right {
+                            margin-left: -16px;
+                        }
+                    }
+                    &.pre-last-numbers {
+                        opacity: 0.8;
+                        scale: 0.94;
+                        &.left {
+                            margin-right: -6px;
+                        }
+                        &.right {
+                            margin-left: -6px;
+                        }
+                    }
                 }
             }
         }
