@@ -100,7 +100,7 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
 
                 {
                     factoryComponent(tabSelect, tabsLimitShow, tabsShow, []).map((number, key) => (
-                        <div onClick={() => { key > numberSelect ? this.foward((key - numberSelect)) : key < numberSelect ? this.previous(numberSelect - key) : console.log('arroba') }} className='pre-body'>
+                        <div key={key} onClick={() => { key > numberSelect ? this.foward((key - numberSelect)) : key < numberSelect ? this.previous(numberSelect - key) : console.log('arroba') }} className='pre-body'>
 
                             {numberSelect === key && <div onClick={() => { this.previous(1) }} className='arrow-left'></div>}
                             {numberSelect === key && <div onClick={() => { this.foward(1) }} className='arrow-right'></div>}
